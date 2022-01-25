@@ -20,6 +20,32 @@ class CategoriesTableViewController: UITableViewController {
         // Do any additional setup after loading the view.
         categories = [testCategory]
         navigationItem.title = "Categories"
+        downloadPhoto()
+    }
+    func getImage(from data: Data) -> UIImage? {
+        let image = UIImage()
+        guard let downloadedImage = UIImage(data: data) else {
+            return image
+        }
+        return downloadedImage
+    }
+    func downloadPhoto() -> UIImage? {
+        print(#function)
+        var image: UIImage?
+        ImageDownloader().downloadImage(from: self.testCategory.strCategoryThumb) {  [unowned self] success, data in
+            //
+            guard success else {
+                return
+            }
+            guard let data = data else {
+                return
+            }
+            guard let downloadedImage = self.getImage(from: data) else {
+                return
+            }
+            image = downloadedImage
+        }
+        return image
     }
 }
 

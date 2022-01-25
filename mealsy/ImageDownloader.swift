@@ -25,6 +25,6 @@ struct ImageDownloader {
                 return
             }
             completion(true, data)
-        }
+        }.resume()
     }
 }
