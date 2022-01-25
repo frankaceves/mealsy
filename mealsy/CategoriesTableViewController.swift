@@ -19,6 +19,7 @@ class CategoriesTableViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         categories = [testCategory]
+        navigationItem.title = "Categories"
     }
 }
 
