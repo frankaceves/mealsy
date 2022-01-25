@@ -18,6 +18,7 @@
 		7C16C8DD279F919D00831DD8 /* mealsyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C16C8DC279F919D00831DD8 /* mealsyUITests.swift */; };
 		7C16C8DF279F919D00831DD8 /* mealsyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C16C8DE279F919D00831DD8 /* mealsyUITestsLaunchTests.swift */; };
 		7C16C8EC279F922400831DD8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C16C8EB279F922400831DD8 /* Category.swift */; };
+		7C16C8EE279FBC4E00831DD8 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C16C8ED279FBC4E00831DD8 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7C16C8DC279F919D00831DD8 /* mealsyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mealsyUITests.swift; sourceTree = "<group>"; };
 		7C16C8DE279F919D00831DD8 /* mealsyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mealsyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7C16C8EB279F922400831DD8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		7C16C8ED279FBC4E00831DD8 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				7C16C8BA279F919900831DD8 /* SceneDelegate.swift */,
 				7C16C8BC279F919900831DD8 /* CategoriesTableViewController.swift */,
 				7C16C8EB279F922400831DD8 /* Category.swift */,
+				7C16C8ED279FBC4E00831DD8 /* ImageDownloader.swift */,
 				7C16C8BE279F919A00831DD8 /* Main.storyboard */,
 				7C16C8C4279F919D00831DD8 /* Assets.xcassets */,
 				7C16C8C6279F919D00831DD8 /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 				7C16C8EC279F922400831DD8 /* Category.swift in Sources */,
 				7C16C8B9279F919900831DD8 /* AppDelegate.swift in Sources */,
 				7C16C8C3279F919A00831DD8 /* mealsy.xcdatamodeld in Sources */,
+				7C16C8EE279FBC4E00831DD8 /* ImageDownloader.swift in Sources */,
 				7C16C8BB279F919900831DD8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
