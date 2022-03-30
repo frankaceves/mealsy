@@ -12,10 +12,7 @@ class DessertsTableViewCell: UITableViewCell {
     
     func configureCell(name: String?, imageUrlString: String?) {
         dessertImageView.image = UIImage(systemName: "pencil")
-        
         dessertNameLabel.text = name
-        
-        
         dessertImageView.layer.cornerRadius = 8
         //call imageDownloader
         guard let imageURLString = imageUrlString else {
