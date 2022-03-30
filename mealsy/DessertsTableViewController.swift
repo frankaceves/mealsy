@@ -7,15 +7,15 @@
 
 import UIKit
 
-class CategoriesTableViewController: UITableViewController {
+class DessertsTableViewController: UITableViewController {
     var categories: [Category] = []
     var viewModel = CategoryViewModel()
     var dessertViewModel = DessertViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navigationItem.title = "Categories"
-        callForCategories()
+        navigationItem.title = "Desserts"
+        //callForCategories()
         getDesserts()
     }
     func getDesserts() {
@@ -43,7 +43,7 @@ class CategoriesTableViewController: UITableViewController {
     }
 }
 
-extension CategoriesTableViewController {
+extension DessertsTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print("viewmodel count: \(viewModel.categories.count)")
         //return viewModel.categories.count
