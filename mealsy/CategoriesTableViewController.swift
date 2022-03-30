@@ -15,8 +15,19 @@ class CategoriesTableViewController: UITableViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "Categories"
         callForCategories()
+        getDesserts()
     }
-    
+    func getDesserts() {
+        DessertService().downloadDessertMeals { success, meals in
+            guard success else {
+                return
+            }
+            guard let meals = meals else {
+                return
+            }
+            print(meals)
+        }
+    }
     func callForCategories() {
         viewModel.getCategories { [weak self] success in
             guard success else {
