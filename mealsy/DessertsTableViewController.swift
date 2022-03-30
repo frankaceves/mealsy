@@ -14,6 +14,16 @@ class DessertsTableViewController: UITableViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "Desserts"
         getDesserts()
+//        let recipeVM = RecipeViewModel()
+//        recipeVM.downloadRecipe(id: "52961") { success, recipe in
+//            guard success else {
+//                return
+//            }
+//            guard let recipe = recipe else {
+//                return
+//            }
+//            
+//        }
     }
     func getDesserts() {
         dessertViewModel.getDesserts { [unowned self] success in

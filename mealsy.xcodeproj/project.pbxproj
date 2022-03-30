@@ -22,6 +22,9 @@
 		7C8B819C27F4D9B00083E1E2 /* DessertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B819B27F4D9B00083E1E2 /* DessertService.swift */; };
 		7C8B819E27F4DB770083E1E2 /* DessertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */; };
 		7C8B81A027F4DEEA0083E1E2 /* DessertsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B819F27F4DEEA0083E1E2 /* DessertsTableViewCell.swift */; };
+		7C8B81A227F50F9F0083E1E2 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B81A127F50F9F0083E1E2 /* Recipe.swift */; };
+		7C8B81A427F511420083E1E2 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B81A327F511420083E1E2 /* RecipeViewModel.swift */; };
+		7C8B81A627F516C70083E1E2 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B81A527F516C70083E1E2 /* RecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		7C8B819B27F4D9B00083E1E2 /* DessertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertService.swift; sourceTree = "<group>"; };
 		7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModel.swift; sourceTree = "<group>"; };
 		7C8B819F27F4DEEA0083E1E2 /* DessertsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsTableViewCell.swift; sourceTree = "<group>"; };
+		7C8B81A127F50F9F0083E1E2 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		7C8B81A327F511420083E1E2 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		7C8B81A527F516C70083E1E2 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +122,13 @@
 				7C16C8BC279F919900831DD8 /* DessertsTableViewController.swift */,
 				7C8B819F27F4DEEA0083E1E2 /* DessertsTableViewCell.swift */,
 				7C8B819927F4D9230083E1E2 /* Meal.swift */,
+				7C8B81A127F50F9F0083E1E2 /* Recipe.swift */,
+				7C8B81A327F511420083E1E2 /* RecipeViewModel.swift */,
 				7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */,
 				7C8B819B27F4D9B00083E1E2 /* DessertService.swift */,
 				7C16C8ED279FBC4E00831DD8 /* ImageDownloader.swift */,
 				7C16C8BE279F919A00831DD8 /* Main.storyboard */,
+				7C8B81A527F516C70083E1E2 /* RecipeViewController.swift */,
 				7C16C8C4279F919D00831DD8 /* Assets.xcassets */,
 				7C16C8C6279F919D00831DD8 /* LaunchScreen.storyboard */,
 				7C16C8C9279F919D00831DD8 /* Info.plist */,
@@ -283,8 +292,11 @@
 				7C16C8EE279FBC4E00831DD8 /* ImageDownloader.swift in Sources */,
 				7C16C8BB279F919900831DD8 /* SceneDelegate.swift in Sources */,
 				7C8B819C27F4D9B00083E1E2 /* DessertService.swift in Sources */,
+				7C8B81A427F511420083E1E2 /* RecipeViewModel.swift in Sources */,
+				7C8B81A627F516C70083E1E2 /* RecipeViewController.swift in Sources */,
 				7C8B819E27F4DB770083E1E2 /* DessertViewModel.swift in Sources */,
 				7C8B81A027F4DEEA0083E1E2 /* DessertsTableViewCell.swift in Sources */,
+				7C8B81A227F50F9F0083E1E2 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
