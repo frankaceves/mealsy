@@ -23,6 +23,7 @@
 		7C8A35E027B4DE3E00A4AD92 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A35DF27B4DE3E00A4AD92 /* CategoryService.swift */; };
 		7C8B819A27F4D9230083E1E2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B819927F4D9230083E1E2 /* Meal.swift */; };
 		7C8B819C27F4D9B00083E1E2 /* DessertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B819B27F4D9B00083E1E2 /* DessertService.swift */; };
+		7C8B819E27F4DB770083E1E2 /* DessertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		7C8A35DF27B4DE3E00A4AD92 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		7C8B819927F4D9230083E1E2 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		7C8B819B27F4D9B00083E1E2 /* DessertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertService.swift; sourceTree = "<group>"; };
+		7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				7C16C8BA279F919900831DD8 /* SceneDelegate.swift */,
 				7C16C8BC279F919900831DD8 /* CategoriesTableViewController.swift */,
 				7C8B819927F4D9230083E1E2 /* Meal.swift */,
+				7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */,
 				7C8B819B27F4D9B00083E1E2 /* DessertService.swift */,
 				7C8A35DD27B4D31D00A4AD92 /* CategoryViewModel.swift */,
 				7C8A35DF27B4DE3E00A4AD92 /* CategoryService.swift */,
@@ -288,6 +291,7 @@
 				7C16C8EE279FBC4E00831DD8 /* ImageDownloader.swift in Sources */,
 				7C16C8BB279F919900831DD8 /* SceneDelegate.swift in Sources */,
 				7C8B819C27F4D9B00083E1E2 /* DessertService.swift in Sources */,
+				7C8B819E27F4DB770083E1E2 /* DessertViewModel.swift in Sources */,
 				7C8A35E027B4DE3E00A4AD92 /* CategoryService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import UIKit
 class CategoriesTableViewController: UITableViewController {
     var categories: [Category] = []
     var viewModel = CategoryViewModel()
+    var dessertViewModel = DessertViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -18,14 +19,13 @@ class CategoriesTableViewController: UITableViewController {
         getDesserts()
     }
     func getDesserts() {
-        DessertService().downloadDessertMeals { success, meals in
+        dessertViewModel.getDesserts { [unowned self] success in
             guard success else {
                 return
             }
-            guard let meals = meals else {
-                return
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-            print(meals)
         }
     }
     func callForCategories() {
@@ -46,12 +46,13 @@ class CategoriesTableViewController: UITableViewController {
 extension CategoriesTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print("viewmodel count: \(viewModel.categories.count)")
-        return viewModel.categories.count
+        //return viewModel.categories.count
+        return dessertViewModel.desserts.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let categoryCell = UITableViewCell()
-        categoryCell.textLabel?.text = viewModel.categories[indexPath.row].strCategory
-        return categoryCell
+        let dessertCell = UITableViewCell()
+        dessertCell.textLabel?.text = dessertViewModel.desserts[indexPath.row].strMeal
+        return dessertCell
     }
 }
 
