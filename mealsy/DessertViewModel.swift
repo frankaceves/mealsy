@@ -11,7 +11,6 @@ class DessertViewModel {
     
     func getDesserts(completion: @escaping (Bool) -> Void)  {
         print("dessert viewmodel: \(#function)")
-        //self.view = view
         DessertService().downloadDessertMeals { [unowned self] success, meals in
             guard success else {
                 completion(false)

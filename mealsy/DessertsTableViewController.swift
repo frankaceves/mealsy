@@ -8,14 +8,11 @@
 import UIKit
 
 class DessertsTableViewController: UITableViewController {
-    var categories: [Category] = []
-    var viewModel = CategoryViewModel()
     var dessertViewModel = DessertViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationItem.title = "Desserts"
-        //callForCategories()
         getDesserts()
     }
     func getDesserts() {
@@ -28,30 +25,20 @@ class DessertsTableViewController: UITableViewController {
             }
         }
     }
-    func callForCategories() {
-        viewModel.getCategories { [weak self] success in
-            guard success else {
-                return
-            }
-            DispatchQueue.main.async {
-                guard let tableView = self?.tableView else {
-                    return
-                }
-                tableView.reloadData()
-            }
-        }
-    }
 }
 
 extension DessertsTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print("viewmodel count: \(viewModel.categories.count)")
-        //return viewModel.categories.count
         return dessertViewModel.desserts.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dessertCell = UITableViewCell()
-        dessertCell.textLabel?.text = dessertViewModel.desserts[indexPath.row].strMeal
+        guard let dessertCell = tableView.dequeueReusableCell(withIdentifier: "DessertsTableViewCell") as? DessertsTableViewCell else {
+            return UITableViewCell()
+        }
+        let name = dessertViewModel.desserts[indexPath.row].strMeal
+        let imageURLString = dessertViewModel.desserts[indexPath.row].strMealThumb
+        
+        dessertCell.configureCell(name: name, imageUrlString: imageURLString)
         return dessertCell
     }
 }

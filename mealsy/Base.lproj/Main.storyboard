@@ -16,13 +16,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoriesTableViewCell" id="HBa-bZ-wij" userLabel="DessertsTableViewCell">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DessertsTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DessertsTableViewCell" rowHeight="100" id="HBa-bZ-wij" userLabel="DessertsTableViewCell" customClass="DessertsTableViewCell" customModule="mealsy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HBa-bZ-wij" id="58T-SR-4nx">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-Ol-aHg" userLabel="Dessert Image View">
+                                            <rect key="frame" x="8" y="8" width="100" height="84"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="nkT-qH-lSm"/>
+                                                <constraint firstAttribute="width" secondItem="Iaa-Ol-aHg" secondAttribute="height" multiplier="1:1" id="qTD-Xx-YPD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yw-qf-E6m" userLabel="Dessert Name Label">
+                                            <rect key="frame" x="116" y="50" width="278" height="0.0"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Iaa-Ol-aHg" secondAttribute="bottom" constant="8" id="6tx-UF-Wu9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7yw-qf-E6m" secondAttribute="trailing" id="Nh2-CI-QCc"/>
+                                        <constraint firstItem="7yw-qf-E6m" firstAttribute="leading" secondItem="Iaa-Ol-aHg" secondAttribute="trailing" constant="8" id="bbd-P6-0WM"/>
+                                        <constraint firstItem="Iaa-Ol-aHg" firstAttribute="leading" secondItem="58T-SR-4nx" secondAttribute="leading" constant="8" id="ez2-7j-zu9"/>
+                                        <constraint firstItem="Iaa-Ol-aHg" firstAttribute="top" secondItem="58T-SR-4nx" secondAttribute="top" constant="8" id="kiJ-5M-5Ii"/>
+                                        <constraint firstItem="7yw-qf-E6m" firstAttribute="centerY" secondItem="58T-SR-4nx" secondAttribute="centerY" id="vUv-HR-rA5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dessertImageView" destination="Iaa-Ol-aHg" id="lpd-7o-M47"/>
+                                    <outlet property="dessertNameLabel" destination="7yw-qf-E6m" id="vxS-dV-9nh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
