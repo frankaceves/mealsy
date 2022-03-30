@@ -14,16 +14,6 @@ class DessertsTableViewController: UITableViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "Desserts"
         getDesserts()
-//        let recipeVM = RecipeViewModel()
-//        recipeVM.downloadRecipe(id: "52961") { success, recipe in
-//            guard success else {
-//                return
-//            }
-//            guard let recipe = recipe else {
-//                return
-//            }
-//            
-//        }
     }
     func getDesserts() {
         dessertViewModel.getDesserts { [unowned self] success in
@@ -50,6 +40,18 @@ extension DessertsTableViewController {
         
         dessertCell.configureCell(name: name, imageUrlString: imageURLString)
         return dessertCell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let meal = dessertViewModel.desserts[indexPath.row]
+        let mealID = meal.idMeal
+        let mealName = meal.strMeal
+        print("mealID to pass: \(mealID)")
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController else {
+            return
+        }
+        vc.recipeID = mealID
+        vc.recipeName = mealName
+        show(vc, sender: nil)
     }
 }
 
