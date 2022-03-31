@@ -7,7 +7,6 @@
 
 import Foundation
 class RecipeViewModel {
-    var recipes: [Recipe] = []
     
     func downloadRecipe(id: String, completion: @escaping (Bool, Recipe?) -> Void) {
         let urlString = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(id)"
@@ -33,8 +32,6 @@ class RecipeViewModel {
                 completion(false, nil)
                 return
             }
-            //print("RECIPES Count: \(recipes.meals.count)")
-            //print("Recipe: \(recipes.meals[0].strMeal)")
             completion(true, recipes.meals[0])
         }.resume()
     }
