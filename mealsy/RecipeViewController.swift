@@ -12,7 +12,7 @@ class RecipeViewController: UIViewController {
     var recipeVM = RecipeViewModel()
     @IBOutlet weak var recipeHeaderLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
-    @IBOutlet weak var instructionsLabel: UILabel!
+    @IBOutlet weak var instructionsTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,8 @@ class RecipeViewController: UIViewController {
                 return
             }
             DispatchQueue.main.async {
-                instructionsLabel.text = recipe.strInstructions
+                instructionsTextView.text = recipe.strInstructions
+                instructionsTextView.textContainer.lineFragmentPadding = 0
             }
         }
     }

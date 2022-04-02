@@ -96,36 +96,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-ve-UkE" userLabel="Instructions Body Label">
-                                <rect key="frame" x="8" y="196" width="398" height="17"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="oRa-mt-zzx" userLabel="Instructions Body Text View">
+                                <rect key="frame" x="8" y="186" width="398" height="676"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7fq-NA-BBk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jm0-CB-cmA" firstAttribute="top" secondItem="6n5-n1-rJa" secondAttribute="bottom" constant="16" id="1w1-Ac-yyT"/>
+                            <constraint firstItem="7fq-NA-BBk" firstAttribute="bottom" secondItem="oRa-mt-zzx" secondAttribute="bottom" id="4PX-LK-QC4"/>
                             <constraint firstItem="jm0-CB-cmA" firstAttribute="leading" secondItem="7fq-NA-BBk" secondAttribute="leading" constant="8" id="4sb-Gf-EIt"/>
                             <constraint firstItem="CxB-d4-cC9" firstAttribute="trailing" secondItem="jgd-3p-LR7" secondAttribute="trailing" id="AcC-q4-TRQ"/>
                             <constraint firstItem="7fq-NA-BBk" firstAttribute="trailing" secondItem="jm0-CB-cmA" secondAttribute="trailing" constant="8" id="DIS-Nr-5kM"/>
                             <constraint firstItem="CxB-d4-cC9" firstAttribute="leading" secondItem="jgd-3p-LR7" secondAttribute="leading" id="FT3-hD-dNa"/>
                             <constraint firstItem="jgd-3p-LR7" firstAttribute="leading" secondItem="jm0-CB-cmA" secondAttribute="leading" id="KnH-WG-leV"/>
-                            <constraint firstItem="g0x-ve-UkE" firstAttribute="leading" secondItem="CxB-d4-cC9" secondAttribute="leading" id="OSh-4Y-ZH0"/>
                             <constraint firstItem="6n5-n1-rJa" firstAttribute="leading" secondItem="7fq-NA-BBk" secondAttribute="leading" id="QS4-H8-2uO"/>
                             <constraint firstItem="7fq-NA-BBk" firstAttribute="trailing" secondItem="jgd-3p-LR7" secondAttribute="trailing" constant="8" id="QSt-DE-4yg"/>
                             <constraint firstItem="7fq-NA-BBk" firstAttribute="trailing" secondItem="6n5-n1-rJa" secondAttribute="trailing" id="WZz-5a-9R3"/>
                             <constraint firstItem="jgd-3p-LR7" firstAttribute="top" secondItem="jm0-CB-cmA" secondAttribute="bottom" constant="16" id="avo-qh-O0P"/>
-                            <constraint firstItem="g0x-ve-UkE" firstAttribute="trailing" secondItem="CxB-d4-cC9" secondAttribute="trailing" id="fhA-hj-13L"/>
-                            <constraint firstItem="g0x-ve-UkE" firstAttribute="top" secondItem="CxB-d4-cC9" secondAttribute="bottom" constant="18" id="jmb-rs-CgR"/>
+                            <constraint firstItem="oRa-mt-zzx" firstAttribute="trailing" secondItem="CxB-d4-cC9" secondAttribute="trailing" id="htD-pN-RGG"/>
+                            <constraint firstItem="oRa-mt-zzx" firstAttribute="leading" secondItem="CxB-d4-cC9" secondAttribute="leading" id="l93-Hh-8D9"/>
                             <constraint firstItem="6n5-n1-rJa" firstAttribute="top" secondItem="7fq-NA-BBk" secondAttribute="top" id="lpP-t2-xKq"/>
+                            <constraint firstItem="oRa-mt-zzx" firstAttribute="top" secondItem="CxB-d4-cC9" secondAttribute="bottom" constant="8" id="pPG-41-1Ep"/>
                             <constraint firstItem="CxB-d4-cC9" firstAttribute="top" secondItem="jgd-3p-LR7" secondAttribute="bottom" constant="21" id="u50-WX-j34"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ingredientsLabel" destination="jgd-3p-LR7" id="pNW-4Q-oWk"/>
-                        <outlet property="instructionsLabel" destination="g0x-ve-UkE" id="gjL-5j-Tab"/>
+                        <outlet property="instructionsTextView" destination="oRa-mt-zzx" id="F7D-SX-CEa"/>
                         <outlet property="recipeHeaderLabel" destination="6n5-n1-rJa" id="VPU-u7-ffp"/>
                     </connections>
                 </viewController>
@@ -153,6 +154,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
