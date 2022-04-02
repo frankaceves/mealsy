@@ -23,16 +23,15 @@ class RecipeViewController: UIViewController {
             return
         }
         recipeHeaderLabel.text = "How To Make \(name)"
-        recipeVM.downloadRecipe(id: id) { [unowned self] success, recipe in
-            guard success else {
-                return
-            }
-            guard let recipe = recipe else {
-                return
-            }
-            DispatchQueue.main.async {
-                instructionsTextView.text = recipe.strInstructions
-                instructionsTextView.textContainer.lineFragmentPadding = 0
+        recipeVM.downloadRecipe(id: id) { [unowned self] result in
+            switch result {
+            case .success(let recipe):
+                DispatchQueue.main.async {
+                    self.instructionsTextView.text = recipe.strInstructions
+                    self.instructionsTextView.textContainer.lineFragmentPadding = 0
+                }
+            case .failure(let error):
+                print(error)
             }
         }
     }
