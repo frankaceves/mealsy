@@ -23,13 +23,17 @@ class RecipeViewController: UIViewController {
             return
         }
         recipeHeaderLabel.text = "How To Make \(name)"
-        recipeVM.downloadRecipe(id: id) { [unowned self] result in
+        recipeVM.downloadRecipeDetails(id: id) { [unowned self] result in
             switch result {
             case .success(let recipe):
+                let recipe = recipeVM.constructRecipe(from: recipe.allMealItems)
                 DispatchQueue.main.async {
-                    self.instructionsTextView.text = recipe.strInstructions
+                    self.instructionsTextView.text = recipe?.mealInstructions
                     self.instructionsTextView.textContainer.lineFragmentPadding = 0
+                    // TODO: add full ingredients list (possibly to tableView)
+                    self.ingredientsLabel.text = recipe?.ingredients[0].name
                 }
+                break
             case .failure(let error):
                 print(error)
             }
