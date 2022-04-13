@@ -40,26 +40,7 @@ class NetworkTests: XCTestCase {
         wait(for: [expectation], timeout: 5.0)
     }
     
-    func constructRecipe(from dict: [[String:String?]]) -> RealRecipe? {
-        print(#function)
-        guard var recipeDict = dict.first else {
-            return nil
-        }
-        //process name, instructions in dictionary
-        guard let recipeName = recipeDict[RecipeConstants.recipeName.rawValue] as? String, let recipeInstructions = recipeDict[RecipeConstants.recipeInstructions.rawValue] as? String else {
-            return nil
-        }
-        var recipeToReturn = RealRecipe(mealName: recipeName, mealInstructions: recipeInstructions, ingredients: [])
-        //remove name, instructions
-        recipeDict.removeValue(forKey: RecipeConstants.recipeName.rawValue)
-        recipeDict.removeValue(forKey: RecipeConstants.recipeInstructions.rawValue)
-        //construct recipe using remaining items
-        var ingredients = rcTests.createIngredientArray(from: recipeDict)
-        //print(ingredients)
-        recipeToReturn.ingredients = ingredients
-        //print(recipeToReturn)
-        return recipeToReturn
-    }
+    
     func testDownloadRecipeReturnsRecipeWithNoNilItems() throws {
         let expectation = XCTestExpectation(description: "recipe is downloaded and transformed")
         recipeVM.downloadRecipeDetails(id: recipeID) { [unowned self] result in
@@ -68,7 +49,7 @@ class NetworkTests: XCTestCase {
                 XCTFail(error.localizedDescription)
             case .success(let dict):
                 let modifiedDict = dict.allMealItems
-                guard let recipe = self.constructRecipe(from: modifiedDict) else {
+                guard let recipe = recipeVM.constructRecipe(from: modifiedDict) else {
                     return
                 }
                 print(recipe)
