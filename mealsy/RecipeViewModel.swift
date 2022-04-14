@@ -14,8 +14,24 @@ enum RecipeDownloadError: Error {
     case couldNotParseJSON
 }
 
-struct RecipeViewModel {
+class RecipeViewModel {
     var recipeToReturn: RealRecipe?
+    
+    func fetchRecipe(id: String, completion: @escaping () -> Void) {
+        downloadRecipeDetails(id: id) { [unowned self] unconstructedRecipe in
+            switch unconstructedRecipe {
+            case .success(let recipe):
+                guard let recipeToReturn = constructRecipe(from: recipe.allMealItems) else {
+                    completion()
+                    return
+                }
+                self.recipeToReturn = recipeToReturn
+                completion()
+            case .failure(let error):
+                completion()
+            }
+        }
+    }
     
     func downloadRecipeDetails(id: String, completion: @escaping (Result<RecipeItems,Error>) -> Void) {
         print(#function)
@@ -45,7 +61,7 @@ struct RecipeViewModel {
                 completion(.failure(RecipeDownloadError.couldNotParseJSON))
                 return
             }
-            //print(recipes.allMealItems)
+            //send completion, which then calls to construct recipe
             completion(.success(recipe))
         }.resume()
     }
@@ -65,15 +81,10 @@ struct RecipeViewModel {
         recipeDict.removeValue(forKey: RecipeConstants.recipeInstructions.rawValue)
         //construct recipe using remaining items
         recipeToReturn.ingredients = createIngredientArray(from: recipeDict)
-        //print(recipeToReturn)
         return recipeToReturn
     }
     
     func createIngredientArray(from dict: [String: String?]) -> [RealIngredient] {
-        //filter out ingredients and measurements
-        //var ingredientNameDict: [Int: String] = [:]
-        //var measurementDict: [Int: String] = [:]
-        
         var filteredItems: [String: String] = [:]
         
         //filter out nil values
