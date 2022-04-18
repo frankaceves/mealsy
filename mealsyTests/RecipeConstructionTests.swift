@@ -11,6 +11,7 @@ import XCTest
 class RecipeConstructionTests: XCTestCase {
     var sampleIngredientsDictionary: [String: String?] = [:]
     var sampleMealDictionary: [String: String?] = [:]
+    let recipeVM = RecipeViewModel()
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         sampleIngredientsDictionary = [
@@ -87,57 +88,11 @@ class RecipeConstructionTests: XCTestCase {
             "Sugar":"2 tbs"
         ]
         
-        let array = constructIngredientsArray(ingredientDict: mockIngredientDict)
+        let array = recipeVM.constructIngredientsArray(ingredientDict: mockIngredientDict)
         XCTAssertTrue(!array.isEmpty)
     }
     func testFullArrayNotEmpty() throws {
-        let array = createIngredientArray(from: sampleIngredientsDictionary)
+        let array = recipeVM.createIngredientArray(from: sampleIngredientsDictionary)
         XCTAssertTrue(!array.isEmpty)
-    }
-}
-
-extension RecipeConstructionTests {
-    func createIngredientArray(from dict: [String: String?]) -> [RealIngredient] {
-        //filter out ingredients and measurements
-        //var ingredientNameDict: [Int: String] = [:]
-        //var measurementDict: [Int: String] = [:]
-        
-        var filteredItems: [String: String] = [:]
-        
-        //filter out nil values
-        let itemsWithNilFilteredOut = dict.filter { dict in
-            dict.value != nil
-        }
-        //filter out empty values and spaces
-        let itemsWithSpacesFilteredOut = itemsWithNilFilteredOut.filter { dict in
-            !dict.value!.isEmpty && dict.value != " "
-        }
-        //remove all other items other than ingredient & measurement
-        let filteredIngredientAndMeasurement = itemsWithSpacesFilteredOut.filter { item in
-            item.key != "strIngredient" && item.key != "strMeasure"
-        }
-        var index = 1
-        while index <= filteredIngredientAndMeasurement.count {
-            if let name = filteredIngredientAndMeasurement["strIngredient\(index)"] as? String, let measure = filteredIngredientAndMeasurement["strMeasure\(index)"] as? String {
-                filteredItems[name] = measure
-            }
-            index += 1
-        }
-        print("filtered items count: \(filteredItems.count)\n\(filteredItems)")
-        
-        //call constructor func
-        let array = constructIngredientsArray(ingredientDict: filteredItems)
-        return array
-    }
-    func constructIngredientsArray(ingredientDict: [String: String]) -> [RealIngredient] {
-        //take dicts and combine
-        var constructedIngredientArray: [RealIngredient] = []
-        ingredientDict.forEach { element in
-            let name = element.key
-            let measure = element.value
-            let ingredient = RealIngredient(name: name, measurement: measure)
-            constructedIngredientArray.append(ingredient)
-        }
-        return constructedIngredientArray
     }
 }
