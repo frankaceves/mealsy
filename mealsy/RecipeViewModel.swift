@@ -109,10 +109,10 @@ class RecipeViewModel {
         print("filtered items count: \(filteredItems.count)\n\(filteredItems)")
         
         //call constructor func
-        let array = constructIngredientsArray(ingredientDict: filteredItems)
+        let array = constructRealIngredientArray(ingredientDict: filteredItems)
         return array
     }
-    func constructIngredientsArray(ingredientDict: [String: String]) -> [RealIngredient] {
+    func constructRealIngredientArray(ingredientDict: [String: String]) -> [RealIngredient] {
         //take dicts and combine
         var constructedIngredientArray: [RealIngredient] = []
         ingredientDict.forEach { element in

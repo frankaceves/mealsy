@@ -88,11 +88,25 @@ class RecipeConstructionTests: XCTestCase {
             "Sugar":"2 tbs"
         ]
         
-        let array = recipeVM.constructIngredientsArray(ingredientDict: mockIngredientDict)
+        let array = recipeVM.constructRealIngredientArray(ingredientDict: mockIngredientDict)
         XCTAssertTrue(!array.isEmpty)
     }
     func testFullArrayNotEmpty() throws {
         let array = recipeVM.createIngredientArray(from: sampleIngredientsDictionary)
         XCTAssertTrue(!array.isEmpty)
+    }
+    func testConstructionOfIngredientsYieldsSingleLineOfText() {
+        let array = recipeVM.createIngredientArray(from: sampleIngredientsDictionary)
+        let expectedString = "3 tbs Peanut Butter"
+        array.forEach { ingredient in
+            if ingredient.name == "Peanut Butter" {
+                let constructedString = constructedString(ingredient: ingredient)
+                XCTAssertEqual(constructedString, expectedString)
+            }
+        }
+    }
+    func constructedString(ingredient: RealIngredient) -> String {
+        let constructedString = "\(ingredient.measurement)" + " " + "\(ingredient.name)"
+        return constructedString
     }
 }
