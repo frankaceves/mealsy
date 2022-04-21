@@ -125,20 +125,13 @@
 			children = (
 				7C16C8B8279F919900831DD8 /* AppDelegate.swift */,
 				7C16C8BA279F919900831DD8 /* SceneDelegate.swift */,
-				7C16C8BC279F919900831DD8 /* DessertsTableViewController.swift */,
-				7C8B819F27F4DEEA0083E1E2 /* DessertsTableViewCell.swift */,
-				7C8B819927F4D9230083E1E2 /* Meal.swift */,
-				7C8B81A127F50F9F0083E1E2 /* Recipe.swift */,
-				7C8B81A327F511420083E1E2 /* RecipeViewModel.swift */,
-				7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */,
+				7CB01CF72810E18900CCEBF7 /* Controller */,
+				7CB01CF62810E15A00CCEBF7 /* Model */,
+				7CB01CF82810E19600CCEBF7 /* View Model */,
 				7C8B819B27F4D9B00083E1E2 /* DessertService.swift */,
 				7C16C8ED279FBC4E00831DD8 /* ImageDownloader.swift */,
-				7CB01CF22810940700CCEBF7 /* RecipeInstructionsCell.swift */,
-				7C16C8BE279F919A00831DD8 /* Main.storyboard */,
-				7CB01CF42810D51700CCEBF7 /* RecipeIngredientsTableViewCell.swift */,
-				7C8B81A527F516C70083E1E2 /* RecipeViewController.swift */,
+				7CB01CF92810E1B800CCEBF7 /* View */,
 				7C16C8C4279F919D00831DD8 /* Assets.xcassets */,
-				7C16C8C6279F919D00831DD8 /* LaunchScreen.storyboard */,
 				7C16C8C9279F919D00831DD8 /* Info.plist */,
 				7C16C8C1279F919A00831DD8 /* mealsy.xcdatamodeld */,
 			);
@@ -161,6 +154,45 @@
 				7C16C8DE279F919D00831DD8 /* mealsyUITestsLaunchTests.swift */,
 			);
 			path = mealsyUITests;
+			sourceTree = "<group>";
+		};
+		7CB01CF62810E15A00CCEBF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C8B819927F4D9230083E1E2 /* Meal.swift */,
+				7C8B81A127F50F9F0083E1E2 /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CB01CF72810E18900CCEBF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C16C8BC279F919900831DD8 /* DessertsTableViewController.swift */,
+				7C8B81A527F516C70083E1E2 /* RecipeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7CB01CF82810E19600CCEBF7 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C8B81A327F511420083E1E2 /* RecipeViewModel.swift */,
+				7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		7CB01CF92810E1B800CCEBF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C8B819F27F4DEEA0083E1E2 /* DessertsTableViewCell.swift */,
+				7CB01CF22810940700CCEBF7 /* RecipeInstructionsCell.swift */,
+				7C16C8BE279F919A00831DD8 /* Main.storyboard */,
+				7CB01CF42810D51700CCEBF7 /* RecipeIngredientsTableViewCell.swift */,
+				7C16C8C6279F919D00831DD8 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
