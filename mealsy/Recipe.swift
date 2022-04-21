@@ -16,8 +16,8 @@ struct RecipeItems: Decodable {
 enum RecipeConstants: String {
     case recipeName = "strMeal"
     case recipeInstructions = "strInstructions"
-    case ingredient = "strIngredient"
-    case measurement = "strMeasure"
+    case recipeIngredientName = "strIngredient"
+    case recipeIngredientMeasurement = "strMeasure"
 }
 public struct RealIngredient {
     var name: String

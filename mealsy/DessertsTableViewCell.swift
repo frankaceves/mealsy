@@ -11,12 +11,12 @@ class DessertsTableViewCell: UITableViewCell {
     @IBOutlet var dessertNameLabel: UILabel!
     
     func configureCell(name: String?, imageUrlString: String?) {
-        dessertImageView.image = UIImage(systemName: "pencil")
+        dessertImageView.image = UIImage(systemName: "questionmark.circle")
         dessertNameLabel.text = name
         dessertImageView.layer.cornerRadius = 8
         //call imageDownloader
         guard let imageURLString = imageUrlString else {
-            dessertImageView.image = UIImage(systemName: "xmark.circle.fill")
+            dessertImageView.image = UIImage(systemName: "questionmark.circle")
             return
         }
         getImage(url: imageURLString) { [unowned self] success, image in
@@ -25,7 +25,7 @@ class DessertsTableViewCell: UITableViewCell {
             }
             guard let image = image else {
                 DispatchQueue.main.async {
-                    self.dessertImageView.image = UIImage(systemName: "xmark.circle.fill")
+                    self.dessertImageView.image = UIImage(systemName: "questionmark.circle")
                 }
                 return
             }
@@ -53,6 +53,7 @@ class DessertsTableViewCell: UITableViewCell {
     }
 }
 
+// TODO: - DECIDE ON DESSERT CELL VIEW MODEL USAGE
 class DessertsCellViewModel {
     var dessertImageURLString: String
     var dessertName: String

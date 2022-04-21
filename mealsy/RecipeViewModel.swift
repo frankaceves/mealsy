@@ -12,6 +12,7 @@ enum RecipeDownloadError: Error {
     case dataTaskResponseNot200
     case dataTaskNoDataReturned
     case couldNotParseJSON
+    case couldNotGetURLFromString
 }
 
 class RecipeViewModel {
@@ -27,7 +28,7 @@ class RecipeViewModel {
                 }
                 self.recipeToReturn = recipeToReturn
                 completion()
-            case .failure(let error):
+            case .failure:
                 completion()
             }
         }
@@ -37,7 +38,7 @@ class RecipeViewModel {
         print(#function)
         let urlString = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(id)"
         guard let url = URL(string: urlString) else {
-            print("can't get recipe url from string")
+            completion(.failure(RecipeDownloadError.couldNotGetURLFromString))
             return
         }
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -57,7 +58,6 @@ class RecipeViewModel {
                 return
             }
             guard let recipe = try? JSONDecoder().decode(RecipeItems.self, from: data) else {
-                print("could not decode RECIPES JSON")
                 completion(.failure(RecipeDownloadError.couldNotParseJSON))
                 return
             }
@@ -97,17 +97,15 @@ class RecipeViewModel {
         }
         //remove all other items other than ingredient & measurement
         let filteredIngredientAndMeasurement = itemsWithSpacesFilteredOut.filter { item in
-            item.key != "strIngredient" && item.key != "strMeasure"
+            item.key != RecipeConstants.recipeIngredientName.rawValue && item.key != RecipeConstants.recipeIngredientMeasurement.rawValue
         }
         var index = 1
         while index <= filteredIngredientAndMeasurement.count {
-            if let name = filteredIngredientAndMeasurement["strIngredient\(index)"] as? String, let measure = filteredIngredientAndMeasurement["strMeasure\(index)"] as? String {
+            if let name = filteredIngredientAndMeasurement[RecipeConstants.recipeIngredientName.rawValue + "\(index)"] as? String, let measure = filteredIngredientAndMeasurement[RecipeConstants.recipeIngredientMeasurement.rawValue + "\(index)"] as? String {
                 filteredItems[name] = measure
             }
             index += 1
         }
-        print("filtered items count: \(filteredItems.count)\n\(filteredItems)")
-        
         //call constructor func
         let array = constructRealIngredientArray(ingredientDict: filteredItems)
         return array

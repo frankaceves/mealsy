@@ -39,25 +39,4 @@ class NetworkTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 5.0)
     }
-    
-    
-    func testDownloadRecipeReturnsRecipeWithNoNilItems() throws {
-        let expectation = XCTestExpectation(description: "recipe is downloaded and transformed")
-        recipeVM.downloadRecipeDetails(id: recipeID) { [unowned self] result in
-            switch result {
-            case .failure(let error):
-                XCTFail(error.localizedDescription)
-            case .success(let dict):
-                let modifiedDict = dict.allMealItems
-                guard let recipe = recipeVM.constructRecipe(from: modifiedDict) else {
-                    return
-                }
-                print(recipe)
-                XCTAssertNotNil(recipe.mealName, recipe.mealInstructions)
-                XCTAssertTrue(!recipe.ingredients.isEmpty, "ingredients array not empty \(recipe.ingredients)")
-                expectation.fulfill()
-            }
-        }
-        wait(for: [expectation], timeout: 10.0)
-    }
 }

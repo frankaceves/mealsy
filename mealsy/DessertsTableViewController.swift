@@ -45,7 +45,6 @@ extension DessertsTableViewController {
         let meal = dessertViewModel.desserts[indexPath.row]
         let mealID = meal.idMeal
         let mealName = meal.strMeal
-        print("mealID to pass: \(mealID)")
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController else {
             return
         }

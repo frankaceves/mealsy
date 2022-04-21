@@ -97,16 +97,12 @@ class RecipeConstructionTests: XCTestCase {
     }
     func testConstructionOfIngredientsYieldsSingleLineOfText() {
         let array = recipeVM.createIngredientArray(from: sampleIngredientsDictionary)
-        let expectedString = "3 tbs Peanut Butter"
+        let expectedString = "Peanut Butter: 3 tbs"
         array.forEach { ingredient in
             if ingredient.name == "Peanut Butter" {
-                let constructedString = constructedString(ingredient: ingredient)
+                let constructedString = recipeVM.constructedString(ingredient: ingredient)
                 XCTAssertEqual(constructedString, expectedString)
             }
         }
-    }
-    func constructedString(ingredient: RealIngredient) -> String {
-        let constructedString = "\(ingredient.measurement)" + " " + "\(ingredient.name)"
-        return constructedString
     }
 }
