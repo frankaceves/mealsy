@@ -15,11 +15,10 @@ class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDelegates()
+        configureRecipeTableView()
         loadViews()
     }
     func loadViews() {
-        recipeTableView.separatorStyle = .none
         guard let id = recipeID, let name = recipeName else {
             return
         }
@@ -30,9 +29,10 @@ class RecipeViewController: UIViewController {
             }
         }
     }
-    func setupDelegates() {
+    func configureRecipeTableView() {
         recipeTableView.delegate = self
         recipeTableView.dataSource = self
+        recipeTableView.separatorStyle = .none
     }
 }
 extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
