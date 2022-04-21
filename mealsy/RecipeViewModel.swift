@@ -123,4 +123,9 @@ class RecipeViewModel {
         }
         return constructedIngredientArray
     }
+    
+    func constructedString(ingredient: RealIngredient) -> String {
+        let constructedString = "\(ingredient.name): \(ingredient.measurement)"
+        return constructedString
+    }
 }

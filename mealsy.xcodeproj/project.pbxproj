@@ -26,6 +26,8 @@
 		7C8B81A427F511420083E1E2 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B81A327F511420083E1E2 /* RecipeViewModel.swift */; };
 		7C8B81A627F516C70083E1E2 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B81A527F516C70083E1E2 /* RecipeViewController.swift */; };
 		7CB01CEF2807559000CCEBF7 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB01CEE2807559000CCEBF7 /* NetworkTests.swift */; };
+		7CB01CF32810940700CCEBF7 /* RecipeInstructionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB01CF22810940700CCEBF7 /* RecipeInstructionsCell.swift */; };
+		7CB01CF52810D51700CCEBF7 /* RecipeIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB01CF42810D51700CCEBF7 /* RecipeIngredientsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		7C8B81A327F511420083E1E2 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		7C8B81A527F516C70083E1E2 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		7CB01CEE2807559000CCEBF7 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		7CB01CF22810940700CCEBF7 /* RecipeInstructionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInstructionsCell.swift; sourceTree = "<group>"; };
+		7CB01CF42810D51700CCEBF7 /* RecipeIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,9 @@
 				7C8B819D27F4DB770083E1E2 /* DessertViewModel.swift */,
 				7C8B819B27F4D9B00083E1E2 /* DessertService.swift */,
 				7C16C8ED279FBC4E00831DD8 /* ImageDownloader.swift */,
+				7CB01CF22810940700CCEBF7 /* RecipeInstructionsCell.swift */,
 				7C16C8BE279F919A00831DD8 /* Main.storyboard */,
+				7CB01CF42810D51700CCEBF7 /* RecipeIngredientsTableViewCell.swift */,
 				7C8B81A527F516C70083E1E2 /* RecipeViewController.swift */,
 				7C16C8C4279F919D00831DD8 /* Assets.xcassets */,
 				7C16C8C6279F919D00831DD8 /* LaunchScreen.storyboard */,
@@ -288,9 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CB01CF32810940700CCEBF7 /* RecipeInstructionsCell.swift in Sources */,
 				7C16C8BD279F919900831DD8 /* DessertsTableViewController.swift in Sources */,
 				7C16C8B9279F919900831DD8 /* AppDelegate.swift in Sources */,
 				7C8B819A27F4D9230083E1E2 /* Meal.swift in Sources */,
+				7CB01CF52810D51700CCEBF7 /* RecipeIngredientsTableViewCell.swift in Sources */,
 				7C16C8C3279F919A00831DD8 /* mealsy.xcdatamodeld in Sources */,
 				7C16C8EE279FBC4E00831DD8 /* ImageDownloader.swift in Sources */,
 				7C16C8BB279F919900831DD8 /* SceneDelegate.swift in Sources */,
